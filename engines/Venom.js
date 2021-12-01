@@ -17,6 +17,7 @@ export default class Venom {
 
         let token = await this.getToken(session);
         console.log(token)
+				console.log('TESTE')
         try {
             const client = await venom.create(
                 session,
