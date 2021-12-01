@@ -20,7 +20,6 @@ export default class Venom {
         try {
             const client = await venom.create(
                 session,
-								false,
                 (base64Qrimg, asciiQR, attempts, urlCode) => {
                     webhooks.wh_qrcode(session, base64Qrimg);
                     this.exportQR(req, res, base64Qrimg, session);
@@ -52,6 +51,7 @@ export default class Venom {
                     }
                 },
                 {
+										multidevice: false,
                     headless: true,
                     logQR: true,
                     browserWS: '', //browserless !=  '' ? browserless.replace('https://', 'wss://')+'?token='+token_browser : '',
