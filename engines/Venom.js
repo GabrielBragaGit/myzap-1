@@ -96,7 +96,12 @@ export default class Venom {
                     WASecretBundle: token.WASecretBundle,
                     WAToken1: token.WAToken1,
                     WAToken2: token.WAToken2
-                }
+                },
+								// BrowserInstance
+								(browser, waPage) => {
+									console.log('Browser PID:', browser.process().pid);
+									waPage.screenshot({ path: 'screenshot.png' });
+								}
             )
 						console.log("TESTEEEEEEEEEEEEEEEEEEEEE1")
             let info = await client.getHostDevice()
