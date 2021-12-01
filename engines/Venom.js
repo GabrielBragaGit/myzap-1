@@ -51,7 +51,7 @@ export default class Venom {
                     }
                 },
                 {
-										multidevice: true,
+										multidevice: false,
                     headless: true,
                     logQR: true,
                     browserWS: '', //browserless !=  '' ? browserless.replace('https://', 'wss://')+'?token='+token_browser : '',
