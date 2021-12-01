@@ -118,6 +118,7 @@ export default class Venom {
                 client: client,
                 tokens: tokens
             })
+						console.log("TESTEEEEEEEEEEEEEEEEEEEEE3")
             return client, tokens;
         } catch (error) {
 					console.log("TESTEEEEEEEEEEEEEEEEEEEEE2")
