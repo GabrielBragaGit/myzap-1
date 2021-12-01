@@ -253,7 +253,6 @@ export default class Events {
         }
         else {
             await client.onMessage(async message => {
-							console.log(await client.returnReply(message));
                 let type = message.type
                 if (type == 'chat' && message.subtype == 'url') {
                     type = 'link'
