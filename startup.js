@@ -51,11 +51,12 @@ async function startAllSessions() {
             console.log('####### Missing or insufficient permissions. #######')
             console.log('### Verifique as permissões de escrita e leitura ###')
         } else {
+					 const url = config.HTTPS ? `https://${config.host}:${config.port}/start` : `http://${config.host}:${config.port}/start`;
             dados.map((item) => {
                 var options = {
                     'method': 'POST',
                     'json': true,
-                    'url': `http://${config.host}:${config.port}/start`,
+                    'url': url,
                     'headers': {
                         'apitoken': item.apitoken,
                         'sessionkey': item.sessionkey
