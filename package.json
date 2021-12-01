@@ -52,7 +52,7 @@
     "superagent-queue": "^*",
     "url-exists": "^*",
     "valid-url": "^*",
-    "venom-bot": "^*",
+    "venom-bot": "^4",
     "whatsapp-web.js": "^*",
     "yoo-hoo": "^*"
   }
