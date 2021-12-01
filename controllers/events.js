@@ -286,6 +286,7 @@ export default class Events {
                             "content": message.body,
                             "status": "RECEIVED",
                             "timestamp": message.timestamp,
+														"rest": message
                         }
 
                         break;

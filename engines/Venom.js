@@ -33,10 +33,9 @@ export default class Venom {
                     Sessions.addInfoSession(session, {
                         status: statusSession
                     })
-										webhooks.wh_connect(session, statusSession)
-                    // if (statusSession != 'qrReadSuccess') {
-                    //     webhooks.wh_connect(session, statusSession)
-                    // }
+                    if (statusSession != 'qrReadSuccess') {
+                        webhooks.wh_connect(session, statusSession)
+                    }
                     if (statusSession === 'browserClose' ||
                         statusSession === 'qrReadFail' ||
                         statusSession === 'autocloseCalled' ||
@@ -100,10 +99,9 @@ export default class Venom {
 								// BrowserInstance
 								(browser, waPage) => {
 									console.log('Browser PID:', browser.process().pid);
-									waPage.screenshot({ path: 'screenshot.png' });
+									// waPage.screenshot({ path: 'screenshot.png' });
 								}
             )
-						console.log("TESTEEEEEEEEEEEEEEEEEEEEE1")
             let info = await client.getHostDevice()
             let tokens = await client.getSessionTokenBrowser()
             let browser = []
@@ -118,11 +116,8 @@ export default class Venom {
                 client: client,
                 tokens: tokens
             })
-						console.log("TESTEEEEEEEEEEEEEEEEEEEEE3")
             return client, tokens;
         } catch (error) {
-					console.log("TESTEEEEEEEEEEEEEEEEEEEEE2")
-
             console.log(error)
         }
     }
