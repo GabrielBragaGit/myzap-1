@@ -33,9 +33,10 @@ export default class Venom {
                     Sessions.addInfoSession(session, {
                         status: statusSession
                     })
-                    if (statusSession != 'qrReadSuccess') {
-                        webhooks.wh_connect(session, statusSession)
-                    }
+										webhooks.wh_connect(session, statusSession)
+                    // if (statusSession != 'qrReadSuccess') {
+                    //     webhooks.wh_connect(session, statusSession)
+                    // }
                     if (statusSession === 'browserClose' ||
                         statusSession === 'qrReadFail' ||
                         statusSession === 'autocloseCalled' ||
