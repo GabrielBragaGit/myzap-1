@@ -17,7 +17,6 @@ export default class Venom {
 
         let token = await this.getToken(session);
         console.log(token)
-				console.log('TESTE')
         try {
             const client = await venom.create(
                 session,
@@ -97,7 +96,7 @@ export default class Venom {
                     WAToken2: token.WAToken2
                 }
             )
-
+						console.log("TESTEEEEEEEEEEEEEEEEEEEEE1")
             let info = await client.getHostDevice()
             let tokens = await client.getSessionTokenBrowser()
             let browser = []
@@ -114,6 +113,8 @@ export default class Venom {
             })
             return client, tokens;
         } catch (error) {
+					console.log("TESTEEEEEEEEEEEEEEEEEEEEE2")
+
             console.log(error)
         }
     }
