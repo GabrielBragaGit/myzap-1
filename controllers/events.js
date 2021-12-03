@@ -274,23 +274,24 @@ export default class Events {
                 switch (type) {
 
                     case 'text':
-											response = {
-													"session": session,
-													"type": 'text',
-													"status": "RECEIVED",
-													message,
-                            // "wook": 'RECEIVE_MESSAGE',
-                            // "type": 'text',
-                            // "id": message.id,
-                            // "session": session,
-                            // "isGroupMsg": message.isGroupMsg,
-                            // "author": message.author ? message.author : null,
-                            // "sender": message.to.split('@')[0],
-                            // "phone": message.from.split('@')[0],
-                            // "content": message.body,
-                            // "status": "RECEIVED",
-                            // "timestamp": message.timestamp
-                        }
+											response = message;
+											// response = {
+											// 		"session": session,
+											// 		"type": 'text',
+											// 		"status": "RECEIVED",
+											// 		message,
+                      //       // "wook": 'RECEIVE_MESSAGE',
+                      //       // "type": 'text',
+                      //       // "id": message.id,
+                      //       // "session": session,
+                      //       // "isGroupMsg": message.isGroupMsg,
+                      //       // "author": message.author ? message.author : null,
+                      //       // "sender": message.to.split('@')[0],
+                      //       // "phone": message.from.split('@')[0],
+                      //       // "content": message.body,
+                      //       // "status": "RECEIVED",
+                      //       // "timestamp": message.timestamp
+                      //   }
 
                         break;
 
