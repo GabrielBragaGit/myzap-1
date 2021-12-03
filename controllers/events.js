@@ -275,7 +275,7 @@ export default class Events {
                 switch (type) {
 
                     case 'text':
-											response = [message];
+											response = message;
 											// response = {
 											// 		"session": session,
 											// 		"type": 'text',
@@ -498,6 +498,7 @@ export default class Events {
                         break;
                 }
 
+								responde = {messages: [response]};
                 await webhooks.wh_messages(session, response)
 
             })
