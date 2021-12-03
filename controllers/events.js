@@ -272,7 +272,7 @@ export default class Events {
                     var fileName = `${telefone}-${year}${month}${date}-${miliseconds}.${mime.extension(message.mimetype)}`;
                 }
 								message.author = message.sender.id;
-								message.chatName = message.pushname;
+								message.chatName = message.sender.pushname;
                 switch (type) {
 
                     case 'text':
