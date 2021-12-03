@@ -498,7 +498,7 @@ export default class Events {
                         break;
                 }
 
-								responde = {messages: [response]};
+								response = {messages: [response]};
                 await webhooks.wh_messages(session, response)
 
             })
