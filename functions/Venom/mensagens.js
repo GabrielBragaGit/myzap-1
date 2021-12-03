@@ -19,7 +19,7 @@ export default class Mensagens {
         // let isGroup = req.body.isGroup;
         // let number = isGroup === true ? req.body.number + '@g.us' : req.body.number + '@c.us';
 				const number = req.body.chatId;
-				if (!number.match(/^([0-9]*)(@c.us)|(g.us)$/)) {
+				if (!number || !number.match(/^([0-9]*)(@c.us)|(g.us)$/)) {
 					return res.status(400).json({
 						status: 400,
 						error: "chatId não foi informado ou incorreto"
