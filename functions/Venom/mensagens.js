@@ -16,10 +16,13 @@ export default class Mensagens {
 
     static async sendText(req, res) {
         let data = Sessions.getSession(req.body.session)
-        let isGroup = req.body.isGroup;
-        let number = isGroup === true ? req.body.number + '@g.us' : req.body.number + '@c.us';
+        // let isGroup = req.body.isGroup;
+        // let number = isGroup === true ? req.body.number + '@g.us' : req.body.number + '@c.us';
+        let number = req.body.chatId;
+// 
 
-        if (!req.body.text) {
+        // if (!req.body.text) {
+        if (!req.body.body) {
             return res.status(400).json({
                 status: 400,
                 error: "Text não foi informado"
@@ -27,19 +30,31 @@ export default class Mensagens {
         }
         else {
             try {
-                let response = await data.client.sendText(number, req.body.text)
+                // let response = await data.client.sendText(number, req.body.text)
+                let response = await data.client.sendText(number, req.body.body)
                 return res.status(200).json({
                     result: 200,
                     type: 'text',
                     messageId: response.to._serialized,//ok
                     session: req.body.session,
-                    data: response
+                    data: response,
+										sent: true,
+										id: response.to._serialized
                 })
             } catch (error) {
-                return res.status(500).json({
-                    result: 500,
-                    error: error
-                })
+                // return res.status(500).json({
+                //     result: 500,
+                //     error: error
+                // })
+								return res.status(200).json({
+									result: 200,
+									type: 'text',
+									// messageId: response.to._serialized,//ok
+									// session: req.body.session,
+									// data: response,
+									sent: false,
+									// id: response.to._serialized
+							})
             }
         }
     }
