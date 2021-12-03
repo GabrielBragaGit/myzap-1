@@ -271,6 +271,7 @@ export default class Events {
                     let miliseconds = date_ob.getMilliseconds();
                     var fileName = `${telefone}-${year}${month}${date}-${miliseconds}.${mime.extension(message.mimetype)}`;
                 }
+								message.author = message.sender.id;
                 switch (type) {
 
                     case 'text':
