@@ -18,13 +18,13 @@ export default class Mensagens {
         let data = Sessions.getSession(req.body.session)
         // let isGroup = req.body.isGroup;
         // let number = isGroup === true ? req.body.number + '@g.us' : req.body.number + '@c.us';
-				if (!/^([0-9]*)(@c.us)|(g.us)$/.test(req.body.chatId)) {
+				const number = req.body.chatId;
+				if (!number.match(/^([0-9]*)(@c.us)|(g.us)$/)) {
 					return res.status(400).json({
 						status: 400,
 						error: "chatId não foi informado ou incorreto"
 					})
 				}
-				let number = req.body.chatId;
 // 
 
         // if (!req.body.text) {
