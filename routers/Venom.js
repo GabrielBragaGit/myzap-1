@@ -32,7 +32,7 @@ Router.get('/getQrCode', Auth.getQrCode);
 
 //Mensagens
 // Router.post('/sendText', checkParams, checkNumber, Mensagens.sendText);
-Router.post('/sendMessage', checkParams, checkNumber, Mensagens.sendText);
+Router.post('/sendMessage', checkParams, Mensagens.sendText);
 Router.post('/sendImage', checkParams, checkNumber, Mensagens.sendImage);
 Router.post('/sendVideo', checkParams, checkNumber, Mensagens.sendVideo);
 Router.post('/sendSticker', checkParams, checkNumber, Mensagens.sendSticker);
