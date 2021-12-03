@@ -275,7 +275,7 @@ export default class Events {
                 switch (type) {
 
                     case 'text':
-											response = message;
+											response = [message];
 											// response = {
 											// 		"session": session,
 											// 		"type": 'text',
